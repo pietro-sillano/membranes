@@ -12,12 +12,12 @@ header {
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 2rem;
     margin: 10px 0;
 }
 
 h2 {
-    font-size: 32px;
+    font-size: 1.5rem;
     margin: 10px 0;
 }
 
@@ -41,11 +41,11 @@ h3 {
 
 .box {
     width: calc(33.33% - 50px);
-    height: 200px; /* Fixed height for the rectangular boxes */
+    height: 100px; /* Fixed height for the rectangular boxes */
     /* Add rounded corners */
     border-radius: 15px; /* Adjust the value for desired roundness */
     text-align: center; /* Horizontally center text */
-    line-height: 126px; /* Vertically center text (adjust as needed) */
+    line-height: 63px; /* Vertically center text (adjust as needed) */
     padding: 20;
     margin-bottom: 20px;
     background-color: #3498db; /* Updated light blue box background */
