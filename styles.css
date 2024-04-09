@@ -69,6 +69,24 @@ h3 {
   }
 
 
+.banner {
+    background-color: #bdb8b8; /* Light gray background */
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: #333; /* Dark gray text */
+    display: block; /* Ensure the banner takes up space on the page */
+  }
+  
+  .banner a {
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Inherit text color from the banner */
+  }
+  
+
+
+
 
 @media screen and (max-width: 768px) {
     .box {
