@@ -31,10 +31,12 @@ h3 {
 }
 
 .container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: flex; /* Enable flexbox layout */
+    flex-wrap: wrap; /* Allow boxes to wrap on smaller screens */
+    justify-content: space-around; /* Distribute boxes evenly */
     padding: 20px;
+    width: 80vw; /* Adjust as needed (e.g., 70vw for more spacing) */
+    margin: 0 auto; /* Center the container horizontally */
 }
 
 .box {
@@ -44,7 +46,7 @@ h3 {
     border-radius: 15px; /* Adjust the value for desired roundness */
     text-align: center; /* Horizontally center text */
     line-height: 126px; /* Vertically center text (adjust as needed) */
-    padding: 20px;
+    padding: 20;
     margin-bottom: 20px;
     background-color: #3498db; /* Updated light blue box background */
     border: 1px solid #3498db; /* Light border color */
@@ -57,8 +59,11 @@ h3 {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4); /* Enhance shadow */
     cursor: pointer; /* Change cursor to indicate interactivity */
   }
-
 }
+
+.box h3 {
+    font-size: 1.5rem; /* Adjust as needed */
+  }
 
 
 

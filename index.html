@@ -29,10 +29,29 @@
 </body>
 
 <!-- this is not working because if I resize the image the text is in shit -->
-<script>
+<!-- <script>
     window.onload = function() {
       document.body.style.cssText = "overflow: hidden;";
     };
-</script>
+</script> -->
+ 
+<!-- second version -->
+<script>
+    function handleScroll() {
+      if (window.innerHeight < 600) { // Adjust height as needed
+        document.body.style.height = window.innerHeight + "px";
+      } else {
+        document.body.style.height = "auto";
+      }
+    }
+  
+    window.addEventListener("resize", handleScroll);
+    window.addEventListener("load", handleScroll);
+  </script>
+  
+
+
+
+
 
 </html>
