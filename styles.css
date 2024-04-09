@@ -45,6 +45,12 @@ h3 {
     border: 1px solid #3498db; /* Light border color */
     box-sizing: border-box;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    /* Style for the box on hover */
+  &:hover {
+    background-color: #4ca3dd; /* Change background color on hover */
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4); /* Enhance shadow */
+    cursor: pointer; /* Change cursor to indicate interactivity */
+  }
 
 }
 
