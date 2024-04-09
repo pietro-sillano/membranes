@@ -21,6 +21,12 @@ h2 {
     margin: 10px 0;
 }
 
+h3 {
+    font-size: 36px;
+    margin: 10px 0;
+    color: #fff;
+}
+
 .container {
     display: flex;
     justify-content: space-around;
@@ -35,9 +41,11 @@ h2 {
     line-height: 100px; /* Vertically center text (adjust as needed) */
     padding: 20px;
     margin-bottom: 20px;
-    background-color: #d1ecf1; /* Updated light blue box background */
-    border: 1px solid #bdc3c7; /* Light border color */
+    background-color: #3498db; /* Updated light blue box background */
+    border: 1px solid #3498db; /* Light border color */
     box-sizing: border-box;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+
 }
 
 
