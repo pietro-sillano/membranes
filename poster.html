@@ -1,0 +1,38 @@
+<!-- this is not working -->
+<!-- <object data="path/to/your/file.pdf" type="application/pdf" width="600" height="400">
+    <p>Your browser cannot display PDFs. Download the PDF <a href="notes.pdf">here</a>.</p>
+</object> -->
+
+<!-- this embed a pdf in a frame, not nice -->
+<!-- <iframe src="notes.pdf" width="600" height="400"></iframe> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embedding PDF with PDFObject.js</title>
+  <link rel="stylesheet" href="styles.css"> </head>
+<body>
+  <h1>My Webpage with Embedded PDF</h1>
+
+  <div id="pdf-container"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.3.0/pdfobject.min.js  "></script>
+
+  <script>
+    PDFObject.embed("notes.pdf", "#pdf-container", {
+      // Optional configuration options for PDFObject.embed
+      height: "400px", // Set the height of the embedded PDF (optional)
+      width: "600px", // Set the width of the embedded PDF (optional)
+      // scale: "2", // Set the initial zoom level (optional)
+      fallbackLink: "<p>Your browser cannot display PDFs. Download the PDF <a href='path/to/your/file.pdf'>here</a>.</p>" // Fallback content if PDF can't be displayed
+    });
+  </script>
+</body>
+</html>
+
+
+
