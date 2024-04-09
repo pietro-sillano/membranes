@@ -12,19 +12,22 @@ header {
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 50px;
     margin: 10px 0;
 }
 
 h2 {
-    font-size: 18px;
+    font-size: 36px;
     margin: 10px 0;
 }
 
 h3 {
-    font-size: 36px;
+    font-size: 42px;
     margin: 10px 0;
     color: #fff;
+    /* Remove default link styling */
+    text-decoration: none;
+    outline: none;
 }
 
 .container {
@@ -35,18 +38,21 @@ h3 {
 }
 
 .box {
-    width: calc(33.33% - 20px);
+    width: calc(33.33% - 50px);
     height: 200px; /* Fixed height for the rectangular boxes */
+    /* Add rounded corners */
+    border-radius: 15px; /* Adjust the value for desired roundness */
     text-align: center; /* Horizontally center text */
-    line-height: 100px; /* Vertically center text (adjust as needed) */
-    padding: 20px;
+    line-height: 126px; /* Vertically center text (adjust as needed) */
+    padding: 10px;
     margin-bottom: 20px;
     background-color: #3498db; /* Updated light blue box background */
     border: 1px solid #3498db; /* Light border color */
     box-sizing: border-box;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
     /* Style for the box on hover */
-  &:hover {
+  
+    &:hover {
     background-color: #4ca3dd; /* Change background color on hover */
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4); /* Enhance shadow */
     cursor: pointer; /* Change cursor to indicate interactivity */
