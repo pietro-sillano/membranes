@@ -7,7 +7,7 @@ body {
 header {
     text-align: center;
     padding: 40px 0;
-    background-color: #3498db; /* Updated blue header background */
+    background-color: #176599; /* Updated blue header background */
     color: #fff;
 }
 
@@ -74,12 +74,12 @@ h3 {
     padding: 10px 20px;
     text-align: center;
     font-weight: bold;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: #333; /* Dark gray text */
     display: block; /* Ensure the banner takes up space on the page */
   }
   
-  .banner a {
+.banner a {
     text-decoration: none; /* Remove underline from link */
     color: inherit; /* Inherit text color from the banner */
   }
