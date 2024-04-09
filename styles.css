@@ -44,7 +44,7 @@ h3 {
 
 .box {
     width: 90vw;
-    height: 15vh; /* Fixed height for the rectangular boxes */
+    height: 12vh; /* Fixed height for the rectangular boxes */
     /* Add rounded corners */
     border-radius: 15px; /* Adjust the value for desired roundness */
     text-align: center; /* Horizontally center text */
