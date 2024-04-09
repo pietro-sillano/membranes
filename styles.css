@@ -33,14 +33,17 @@ h3 {
 .container {
     display: flex; /* Enable flexbox layout */
     flex-wrap: wrap; /* Allow boxes to wrap on smaller screens */
-    justify-content: space-around; /* Distribute boxes evenly */
+    justify-content: center; /* Distribute boxes evenly */
     padding: 20px;
-    width: 80vw; /* Adjust as needed (e.g., 70vw for more spacing) */
+    width: 90vw; /* Adjust as needed (e.g., 70vw for more spacing) */
     margin: 0 auto; /* Center the container horizontally */
+    flex-direction: column; /* Stack boxes vertically */
+    align-items: center; /* Center boxes horizontally */
+
 }
 
 .box {
-    width: calc(33.33% - 50px);
+    width: 90vw;
     height: 20vh; /* Fixed height for the rectangular boxes */
     /* Add rounded corners */
     border-radius: 15px; /* Adjust the value for desired roundness */
