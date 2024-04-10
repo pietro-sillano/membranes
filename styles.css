@@ -39,7 +39,6 @@ h3 {
     margin: 0 auto; /* Center the container horizontally */
     flex-direction: column; /* Stack boxes vertically */
     align-items: center; /* Center boxes horizontally */
-
 }
 
 .box {
@@ -86,6 +85,53 @@ h3 {
   
 
 
+.contact-boxes {
+    display: flex;
+    flex-wrap: wrap; 
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+    width: 90vw;
+    margin: 0 auto;
+    align-items: center;  /* Align content vertically within boxes */
+}
+  
+  .contact-box {
+    width: 40%;
+    height: 40%;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px; /* Inherit rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #3498db;
+    transition: all 0.2s ease-in-out; /* Smooth hover effect */
+  }
+  
+  .contact-box a {
+    display: block; /* Make links take full width */
+    margin-bottom: 5px;
+    color: inherit; /* Inherit text color from banner */
+    text-decoration: none; /* Remove underline from links */
+
+  }
+  
+  .contact-box a:hover {
+    color: #333; /* Change link color on hover */
+  }
+  
+
+  /* ICONS */
+  .contact-box i {
+    font-size: 1.5rem; /* Increase icon size */
+    margin-bottom: 5px;
+  }
+  
+  .contact-box h3 {
+    margin: 0; /* Remove top margin */
+    font-size: 1.1rem; /* Slightly smaller heading */
+    margin-bottom: 5px;
+  }
+  
 
 
 @media screen and (max-width: 768px) {
