@@ -7,7 +7,7 @@ body {
 header {
     text-align: center;
     padding: 40px 0;
-    background-color: #176599; /* Updated blue header background */
+    background-color: #3399cc; /* Updated blue header background */
     color: #fff;
 }
 
@@ -50,8 +50,8 @@ h3 {
     line-height: 63px; /* Vertically center text (adjust as needed) */
     padding: 20;
     margin-bottom: 20px;
-    background-color: #3498db; /* Updated light blue box background */
-    border: 1px solid #3498db; /* Light border color */
+    background-color: #3399cc; /* Updated light blue box background */
+    /* border: 1px solid #3498db; Light border color */
     box-sizing: border-box;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
     /* Style for the box on hover */
@@ -103,7 +103,7 @@ h3 {
     padding: 15px;
     border-radius: 10px; /* Inherit rounded corners */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-color: #3498db;
+    background-color: #3399cc;
     transition: all 0.2s ease-in-out; /* Smooth hover effect */
   }
   
