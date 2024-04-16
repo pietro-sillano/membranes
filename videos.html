@@ -5,4 +5,111 @@
 4. movie of reshaping ok
 5. movie of reshaping (vesicle collapse)
 6. maybe one of flippy
+7. add an home icon to go back to index.html
+
 -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/e308efa3ec.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool movies</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cool movies </h1>
+        <!-- <h2>Modeling and Simulating Lipid Bilayer Membrane Dynamics</h2> -->
+    </header>
+  
+    <style>
+      .video-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; /* Allows videos to wrap if needed */
+        margin: 20px auto; /* Add some margin for better presentation */
+        width: 80%; /* Adjust width as needed */
+      }
+  
+      .video-item {
+        margin: 10px; /* Add spacing between videos */
+        text-align: center; /* Center the title below the video */
+        width: 100%; /* Fills the width of the video item   container */
+        height: auto;  /* Adjusts height proportionally based on width */
+      }   
+  
+      /* video 
+      {
+        width: 300px; Adjust video width as needed
+        height: 200px; Adjust video height as needed
+      } 
+      */
+
+    </style>
+
+    <body>
+      <div class="video-container">
+        <div class="video-item">
+          <h2>Fluctuation Planar Membrane</h2>
+          <video width="300" height="200" controls>
+            <source src="assets/engulf/movie.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <h2>Fluctuation Spherical Membrane</h2>
+          <video width="300" height="200" controls>
+            <source src="path/to/video2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <h2>Wrapping of a colloidal particle</h2>
+          <video width="300" height="200" controls>
+            <source src="path/to/video3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <h2>Endoctytosis of a colloidal particle</h2>
+          <video width="300" height="200" controls>
+            <source src="path/to/video4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+
+        </div>
+      </div>
+    </body>
+    </html>
+    
+
+
+
+
+
+
+
+
+</body>
+
+
+ 
+<!-- second version
+<script>
+    function handleScroll() {
+      if (window.innerHeight < 600) { // Adjust height as needed
+        document.body.style.height = window.innerHeight + "px";
+      } else {
+        document.body.style.height = "auto";
+      }
+    }
+  
+    window.addEventListener("resize", handleScroll);
+    window.addEventListener("load", handleScroll);
+  </script> -->
+  
+
+</html>
