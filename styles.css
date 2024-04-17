@@ -125,6 +125,13 @@ h3 {
     font-size: 1.5rem; /* Increase icon size */
     margin-bottom: 5px;
   }
+
+
+    /* ICONS */
+  .header i {
+      font-size: 2rem; /* Increase icon size */
+      margin-bottom: 5px;
+    }
   
   .contact-box h3 {
     margin: 0; /* Remove top margin */
@@ -133,6 +140,15 @@ h3 {
   }
   
 
+
+.home-button {
+    background-color: white; /* Set background color to white */
+    padding: 10px;  /* Add padding for spacing around the icon */
+    border-radius: 5px; /* Add rounded corners */
+    font-size: 30px; /* Increase font size for a bigger icon (adjust as needed) */
+    text-decoration: none;
+    text-align: left;
+  }
 
 @media screen and (max-width: 768px) {
     .box {
