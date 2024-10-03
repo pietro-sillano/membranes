@@ -1,109 +1,55 @@
-<!-- TODO LIST 
-1. add a footer with relevant information (?)
-2.
-
--->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <script src="https://kit.fontawesome.com/e308efa3ec.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modeling Synthetic Cell Division - a project focusing on lipid bilayer membrane dynamics.">
     <title>Modeling Synthetic Cell Division</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <h1>Modeling Synthetic Cell Division</h1>
-        <!-- <h2>Modeling and Simulating Lipid Bilayer Membrane Dynamics</h2> -->
     </header>
-
 
     <div class="container">
         <div class="box">
-            <a style="text-decoration:none;" href="assets/syncell_poster.pdf" display: block; width: 100%; height: 100%;><h3>Poster PDF</h3></a>
+            <a href="assets/syncell_poster.pdf" class="box-link"><h3>Poster PDF</h3></a>
         </div>
         <div class="box">
-            <a style="text-decoration:none;" href="videos.html" display: block; width: 100%; height: 100%;><h3>Cool movies</h3></a>
+            <a href="videos.html" class="box-link"><h3>Cool Movies</h3></a>
         </div>
-        <!-- <div class="box">
-            <a style="text-decoration:none;" href="nerd-stuff.html" display: block; width: 100%; height: 100%;><h3>Nerds' stuff</h3></a>
-        </div> -->
     </div>
-
-    <!-- <div class="banner">
-        <a href="mailto:p.sillano@tudelft.nl">Write me</a> 
-        or check our <a style="text-decoration:none;" href="https://idemalab.tudelft.nl/index.html"> Lab page </a>
-    </div> -->
-
-    <!-- <div class="contact-boxes">
-      <div class="contact-box">
-        <h3>My Contacts</h3>
-        <a href="mailto:p.sillano@tudelft.nl">
-          <i class="fa fa-envelope"></i> Write me
-        </a>
-        <a href="https://github.com/pietro-sillano">
-          <i class="fa fa-github"></i> Github
-        </a>
-      </div>
-      <div class="contact-box">
-        <h3>Group website</h3>
-        <a href="https://idemalab.tudelft.nl/index.html">
-          <i class="fa fa-flask-vial"></i> IDEMA Lab
-        </a>
-      </div>
-    </div> -->
-
 
     <div class="contact-boxes">
-      <div class="contact-box">
-        <h3>My Contacts</h3>
-          <a href="mailto:p.sillano@tudelft.nl">
-            <i class="fa fa-envelope"></i> Write me
-          </a>
-          <a href="https://github.com/pietro-sillano">
-            <i class="fa fa-github"></i> Github
-          </a>
-      </div>
-      <div class="contact-box">
-        <h3>Group website</h3>
-        <a href="https://idemalab.tudelft.nl/index.html">
-          <i class="fa fa-laptop-code"></i> IDEMA Lab
-        </a>
-      </div>
+        <div class="contact-box">
+            <h3>My Contacts</h3>
+            <a href="mailto:p.sillano@tudelft.nl">
+                <i class="fa fa-envelope" aria-hidden="true"></i> Write me
+            </a>
+            <a href="https://github.com/pietro-sillano">
+                <i class="fa fa-github" aria-hidden="true"></i> Github
+            </a>
+        </div>
+        <div class="contact-box">
+            <h3>Group website</h3>
+            <a href="https://idemalab.tudelft.nl/index.html">
+                <i class="fa fa-laptop-code" aria-hidden="true"></i> IDEMA Lab
+            </a>
+        </div>
     </div>
-    
 
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Synthetic Cell Division Project | <a href="mailto:p.sillano@tudelft.nl">Contact Us</a></p>
+        </div>
+    </footer>
 
 </body>
-
-<!-- this is not working because if I resize the image the text is in shit -->
-<!-- <script>
-    window.onload = function() {
-      document.body.style.cssText = "overflow: hidden;";
-    };
-</script> -->
- 
-<!-- second version -->
-<script>
-    function handleScroll() {
-      if (window.innerHeight < 600) { // Adjust height as needed
-        document.body.style.height = window.innerHeight + "px";
-      } else {
-        document.body.style.height = "auto";
-      }
-    }
-  
-    window.addEventListener("resize", handleScroll);
-    window.addEventListener("load", handleScroll);
-  </script>
-  
-
-
-
-
 
 </html>

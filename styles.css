@@ -1,163 +1,142 @@
+/* General */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f6fc; /* Light blue background */
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f7f9fc; /* Softer background */
+    color: #333; /* Dark gray for readability */
 }
 
 header {
     text-align: center;
-    padding: 40px 0;
-    background-color: #3399cc; /* Updated blue header background */
+    padding: 50px 0;
+    background-color: #004a99; /* Dark blue */
     color: #fff;
 }
 
 h1 {
-    font-size: 2rem;
-    margin: 10px 0;
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 0;
 }
 
-h2 {
-    font-size: 1.3rem;
-    margin: 10px 0;
-}
-
-h3 {
-    font-size: 42px;
-    margin: 10px 0;
-    color: #fff;
-    /* Remove default link styling */
-    text-decoration: none;
-    outline: none;
-}
-
+/* Flexbox container styling */
 .container {
-    display: flex; /* Enable flexbox layout */
-    flex-wrap: wrap; /* Allow boxes to wrap on smaller screens */
-    justify-content: center; /* Distribute boxes evenly */
-    padding: 20px;
-    width: 90vw; /* Adjust as needed (e.g., 70vw for more spacing) */
-    margin: 0 auto; /* Center the container horizontally */
-    flex-direction: column; /* Stack boxes vertically */
-    align-items: center; /* Center boxes horizontally */
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    max-width: 1200px; /* Limiting the container width */
 }
 
+/* Box styling */
 .box {
-    width: 90vw;
-    height: 12vh; /* Fixed height for the rectangular boxes */
-    /* Add rounded corners */
-    border-radius: 15px; /* Adjust the value for desired roundness */
-    text-align: center; /* Horizontally center text */
-    line-height: 63px; /* Vertically center text (adjust as needed) */
-    padding: 20;
+    width: 40%;
     margin-bottom: 20px;
-    background-color: #3399cc; /* Updated light blue box background */
-    /* border: 1px solid #3498db; Light border color */
-    box-sizing: border-box;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-    /* Style for the box on hover */
-  
-    &:hover {
-    background-color: #4ca3dd; /* Change background color on hover */
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4); /* Enhance shadow */
-    cursor: pointer; /* Change cursor to indicate interactivity */
-  }
+    background-color: #0073e6; /* Primary Blue */
+    border-radius: 10px;
+    text-align: center;
+    padding: 40px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s; /* Smooth animations */
 }
 
 .box h3 {
-    font-size: 2rem; /* Adjust as needed */
-  }
+    font-size: 1.7rem;
+    color: #fff;
+    font-weight: 600;
+    margin: 0;
+}
 
+.box:hover {
+    background-color: #005bb5; /* Darker blue on hover */
+    transform: translateY(-5px); /* Slight lift on hover */
+}
 
-.banner {
-    background-color: #bdb8b8; /* Light gray background */
-    padding: 10px 20px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.3rem;
-    color: #333; /* Dark gray text */
-    display: block; /* Ensure the banner takes up space on the page */
-  }
-  
-.banner a {
-    text-decoration: none; /* Remove underline from link */
-    color: inherit; /* Inherit text color from the banner */
-  }
-  
+.box-link {
+    text-decoration: none;
+    display: block;
+    color: white;
+}
 
-
+/* Contact boxes */
 .contact-boxes {
     display: flex;
-    flex-wrap: wrap; 
-    flex-direction: row;
     justify-content: space-between;
-    padding: 15px;
-    width: 90vw;
+    padding: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
     margin: 0 auto;
-    align-items: center;  /* Align content vertically within boxes */
 }
-  
-  .contact-box {
-    width: 40%;
-    height: 40%;
+
+.contact-box {
+    width: 45%;
+    background-color: #ffffff;
+    padding: 30px;
     text-align: center;
-    padding: 15px;
-    border-radius: 10px; /* Inherit rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-color: #3399cc;
-    transition: all 0.2s ease-in-out; /* Smooth hover effect */
-  }
-  
-  .contact-box a {
-    display: block; /* Make links take full width */
-    margin-bottom: 5px;
-    color: inherit; /* Inherit text color from banner */
-    text-decoration: none; /* Remove underline from links */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    transition: all 0.3s ease-in-out; /* Smooth hover */
+}
 
-  }
-  
-  .contact-box a:hover {
-    color: #333; /* Change link color on hover */
-  }
-  
+.contact-box h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #004a99;
+}
 
-  /* ICONS */
-  .contact-box i {
-    font-size: 1.5rem; /* Increase icon size */
-    margin-bottom: 5px;
-  }
-
-
-    /* ICONS */
-  .header i {
-      font-size: 2rem; /* Increase icon size */
-      margin-bottom: 5px;
-    }
-  
-  .contact-box h3 {
-    margin: 0; /* Remove top margin */
-    font-size: 1.5rem; /* Slightly smaller heading */
-    margin-bottom: 5px;
-  }
-  
-
-
-.home-button {
-    background-color: white; /* Set background color to white */
-    padding: 10px;  /* Add padding for spacing around the icon */
-    border-radius: 5px; /* Add rounded corners */
-    font-size: 30px; /* Increase font size for a bigger icon (adjust as needed) */
+.contact-box a {
     text-decoration: none;
-    text-align: left;
-  }
+    color: #333;
+    font-size: 1.1rem;
+}
 
+.contact-box a:hover {
+    color: #0073e6;
+    text-decoration: underline;
+}
+
+.contact-box i {
+    margin-right: 10px;
+    color: #0073e6; /* Blue icons */
+    font-size: 1.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: #004a99;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 1rem;
+}
+
+footer a {
+    color: #ffb366; /* Accent color */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Responsive design */
 @media screen and (max-width: 768px) {
-    .box {
-        width: calc(50% - 20px);
+    .box, .contact-box {
+        width: 90%;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .box {
-        width: calc(100% - 20px);
+    .box, .contact-box {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 2rem;
     }
 }
