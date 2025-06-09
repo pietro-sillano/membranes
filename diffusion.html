@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>3 reservoirs diffusion</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    canvas { border: 1px solid #ccc; display: block; margin-bottom: 20px; }
+    .controls { display: flex; flex-wrap: wrap; gap: 20px; }
+    .control-group { display: flex; flex-direction: column; }
+    label { margin-bottom: 4px; }
+    input[type="range"] { width: 200px; }
+    input[type="number"] { width: 70px; padding: 4px; font-size: 1em; }
+    .legend { font-size: 16px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h2>ODE System Integration</h2>
+  <canvas id="plot" width="800" height="400"></canvas>
+
+  <div class="controls">
+    <div class="control-group">
+      <label>k1 (k_ab, k_ba): <span id="k1-val">0.5</span></label>
+      <input type="range" min="0.1" max="3" step="0.1" value="0.5" id="k1" />
+    </div>
+    <div class="control-group">
+      <label>k2 (k_cb, k_bc): <span id="k2-val">0.3</span></label>
+      <input type="range" min="0.1" max="3" step="0.1" value="0.3" id="k2" />
+    </div>
+    <div class="control-group">
+      <label>Initial A:</label>
+      <input type="number" id="A0" value="1.0" step="0.1" />
+    </div>
+    <div class="control-group">
+      <label>Initial B:</label>
+      <input type="number" id="B0" value="0.1" step="0.1" />
+    </div>
+    <div class="control-group">
+      <label>Initial C:</label>
+      <input type="number" id="C0" value="0.7" step="0.1" />
+    </div>
+    <div class="control-group">
+      <label>End Time (tMax):</label>
+      <input type="number" id="tMax" value="10" step="1" />
+    </div>
+    <div class="control-group">
+      <label>&nbsp;</label>
+      <button onclick="updatePlot()">Update</button>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span style="color: blue;">&#9632; [A]</span>&nbsp;&nbsp;
+    <span style="color: red;">&#9632; [B]</span>&nbsp;&nbsp;
+    <span style="color: green;">&#9632; [C]</span>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('plot');
+    const ctx = canvas.getContext('2d');
+    const width = canvas.width;
+    const height = canvas.height;
+
+    const k1Slider = document.getElementById('k1');
+    const k2Slider = document.getElementById('k2');
+    const k1Val = document.getElementById('k1-val');
+    const k2Val = document.getElementById('k2-val');
+    const A0Input = document.getElementById('A0');
+    const B0Input = document.getElementById('B0');
+    const C0Input = document.getElementById('C0');
+    const tMaxInput = document.getElementById('tMax');
+
+    function odeSystem(y, k_ab, k_ba, k_cb, k_bc) {
+      const A = y[0], B = y[1], C = y[2];
+      const dA = -k_ab * A + k_ba * B;
+      const dB = k_ab * A + k_cb * C - k_ba * B - k_bc * B;
+      const dC = -k_cb * C + k_bc * B;
+      return [dA, dB, dC];
+    }
+
+    function solveODE(k1, k2, y0, tMax) {
+      const dt = 0.01;
+      const steps = Math.floor(tMax / dt);
+      const t = [], A = [], B = [], C = [];
+
+      let y = [...y0];
+      const k_ab = k1, k_ba = k1;
+      const k_cb = k2, k_bc = k2;
+
+      for (let i = 0; i < steps; i++) {
+        const time = i * dt;
+        const dydt = odeSystem(y, k_ab, k_ba, k_cb, k_bc);
+        y = y.map((val, idx) => val + dt * dydt[idx]);
+
+        t.push(time);
+        A.push(y[0]);
+        B.push(y[1]);
+        C.push(y[2]);
+      }
+
+      return { t, A, B, C };
+    }
+
+
+      function drawGrid(tMax, minY, maxY) {
+        ctx.strokeStyle = "#ddd";
+        ctx.lineWidth = 1;
+        ctx.font = "14px sans-serif";
+        ctx.fillStyle = "#666";
+
+        const xTicks = 10;
+        const yTicks = 6;
+
+        // Vertical grid lines and x-axis ticks
+        for (let i = 0; i <= xTicks; i++) {
+          const x = (i / xTicks) * width;
+          const t = (i / xTicks) * tMax;
+
+          // Grid line
+          ctx.beginPath();
+          ctx.moveTo(x, 0);
+          ctx.lineTo(x, height);
+          ctx.stroke();
+
+          // Tick
+          ctx.beginPath();
+          ctx.moveTo(x, height - 5);
+          ctx.lineTo(x, height);
+          ctx.stroke();
+
+          // Label
+          ctx.fillText(t.toFixed(1), x + 2, height - 8);
+        }
+
+        // Horizontal grid lines and y-axis ticks
+        for (let i = 0; i <= yTicks; i++) {
+          const y = (i / yTicks) * height;
+          const val = maxY - (i / yTicks) * (maxY - minY);
+
+          // Grid line
+          ctx.beginPath();
+          ctx.moveTo(0, y);
+          ctx.lineTo(width, y);
+          ctx.stroke();
+
+          // Tick
+          ctx.beginPath();
+          ctx.moveTo(0, y);
+          ctx.lineTo(5, y);
+          ctx.stroke();
+
+          // Label
+          ctx.fillText(val.toFixed(1), 8, y - 4);
+        }
+
+        // Axis Labels
+        ctx.save();
+        ctx.fillStyle = "#000";
+        ctx.font = "20px sans-serif";
+
+        // X-axis label ("Time")
+        ctx.textAlign = "center";
+        ctx.fillText("Time", width / 2, height - 25);
+
+        // Y-axis label ("Concentration")
+        ctx.translate(width, height / 2);
+        ctx.rotate(-Math.PI / 2);
+        ctx.textAlign = "center";
+        ctx.fillText("Concentration", 0, -20);
+        ctx.restore();
+    }
+
+
+
+    function drawPlot(data, tMax) {
+      ctx.clearRect(0, 0, width, height);
+      const { t, A, B, C } = data;
+
+      const minY = 0.0;
+      const maxY = 1.2;
+
+      drawGrid(tMax, minY, maxY);
+
+
+      function plotLine(values, color) {
+        ctx.beginPath();
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 2;
+        for (let i = 0; i < t.length; i++) {
+          const x = (t[i] / tMax) * width;
+          const y = height - (values[i] / maxY) * height;
+          if (i === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+      }
+
+      plotLine(A, "blue");
+      plotLine(B, "red");
+      plotLine(C, "green");
+
+
+      // Show mouse hover data
+      canvas.addEventListener("mousemove", (event) => {
+      const rect = canvas.getBoundingClientRect();
+      const mouseX = event.clientX - rect.left;
+      const mouseY = event.clientY - rect.top;
+
+      const timeIndex = Math.floor((mouseX / width) * t.length);
+      if (timeIndex >= 0 && timeIndex < t.length) {
+        const time = t[timeIndex];
+        const concentrationA = A[timeIndex];
+        const concentrationB = B[timeIndex];
+        const concentrationC = C[timeIndex];
+
+        // Clear previous hover text and dots
+        ctx.clearRect(0, 0, width, height);
+
+        // Redraw the grid and plot lines
+        drawGrid(tMax, minY, maxY);
+        plotLine(A, "blue");
+        plotLine(B, "red");
+        plotLine(C, "green");
+
+
+        ctx.fillStyle = "#000";
+        ctx.font = "14px sans-serif";
+        ctx.fillText(
+          `Time: ${time.toFixed(2)} | [A]: ${concentrationA.toFixed(3)} | [B]: ${concentrationB.toFixed(3)} | [C]: ${concentrationC.toFixed(3)}`,
+          10,
+          20
+        );
+
+      // Draw the moving dots for A, B, and C concentrations
+      // Blue dot for [A]
+      const xA = (time / tMax) * width;
+      const yA = height - ((concentrationA - minY) / (maxY - minY)) * height;
+      drawDot(xA, yA, "blue");
+
+      // Red dot for [B]
+      const xB = (time / tMax) * width;
+      const yB = height - ((concentrationB - minY) / (maxY - minY)) * height;
+      drawDot(xB, yB, "red");
+
+      // Green dot for [C]
+      const xC = (time / tMax) * width;
+      const yC = height - ((concentrationC - minY) / (maxY - minY)) * height;
+      drawDot(xC, yC, "green");
+      }
+    });
+  // Function to draw a small dot at (x, y)
+  function drawDot(x, y, color) {
+    ctx.beginPath();
+    ctx.arc(x, y, 5, 0, Math.PI * 2);  // Small circle with radius 5
+    ctx.fillStyle = color;
+    ctx.fill();
+  }
+  }
+
+    function updatePlot() {
+      const k1 = parseFloat(k1Slider.value);
+      const k2 = parseFloat(k2Slider.value);
+      const A0 = parseFloat(A0Input.value);
+      const B0 = parseFloat(B0Input.value);
+      const C0 = parseFloat(C0Input.value);
+      const tMax = parseFloat(tMaxInput.value);
+
+      k1Val.textContent = k1.toFixed(1);
+      k2Val.textContent = k2.toFixed(1);
+
+      const data = solveODE(k1, k2, [A0, B0, C0], tMax);
+      drawPlot(data, tMax);
+    }
+
+    k1Slider.addEventListener('input', updatePlot);
+    k2Slider.addEventListener('input', updatePlot);
+
+    updatePlot(); // Initial plot
+  </script>
+</body>
+</html>
