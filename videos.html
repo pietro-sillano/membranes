@@ -17,142 +17,71 @@
     <script src="https://kit.fontawesome.com/e308efa3ec.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cool movies</title>
+    <title>Gallery - Membrane Dynamics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-      <a href="index.html" class="home-button">
-        <i class="fas fa-home"></i></a><h1>Cool movies </h1>
-        <!-- <h2>Modeling and Simulating Lipid Bilayer Membrane Dynamics</h2> -->
+        <a href="index.html" class="home-button"><i class="fas fa-home"></i></a>
+        <h1>Membrane Gallery</h1>
+        <p>Visualizing Lipid Bilayer Dynamics and Mesh-based Simulations</p>
     </header>
-  
-    <style>
-      .video-container {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap; /* Allows videos to wrap if needed */
-        margin: 20px auto; /* Add some margin for better presentation */
-        width: 80%; /* Adjust width as needed */
-      }
-  
-      .video-item {
-        margin: 10px; /* Add spacing between videos */
-        text-align: center; /* Center the title below the video */
-        width: 100%; /* Fills the width of the video item   container */
-        height: auto;  /* Adjusts height proportionally based on width */
-      }   
-  
-      /* video 
-      {
-        width: 300px; Adjust video width as needed
-        height: 200px; Adjust video height as needed
-      } 
-      */
 
-    </style>
+    <main>
+        <section>
+            <h2 style="text-align: center; margin: 3rem 0 1rem; color: var(--primary);">Mesoscale Model Simulations</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <video controls><source src="assets/plane.mp4" type="video/mp4"></video>
+                    <h2>Planar Membrane Dynamics</h2>
+                </div>
+                <div class="video-card">
+                    <video controls><source src="assets/phase_sep.mp4" type="video/mp4"></video>
+                    <h2>Phase Separation</h2>
+                </div>
+                <div class="video-card">
+                    <video controls><source src="assets/tube.mp4" type="video/mp4"></video>
+                    <h2>Lipid Tube</h2>
+                </div>
+                <div class="video-card">
+                    <video controls><source src="assets/diffusion.mp4" type="video/mp4"></video>
+                    <h2>Diffusion Study</h2>
+                </div>
+                <div class="video-card">
+                    <video controls><source src="assets/wrapp.mp4" type="video/mp4"></video>
+                    <h2>Colloidal Engulfment</h2>
+                </div>
+            </div>
+        </section>
 
-    <body>
-        <div class="video-item">
-          <h1>Mesoscale model</h1>
-          <h2>Planar Membrane Dynamics</h2>
-          <video width="300" height="200" controls>
-            <source src="assets/plane.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+        <section>
+            <h2 style="text-align: center; margin: 4rem 0 1rem; color: var(--primary);">Mesh-Based Simulations</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <img src="assets/Bead.gif" alt="Colloidal particle" style="width:100%;">
+                    <h2>Particle Engulfment</h2>
+                </div>
+                <div class="video-card">
+                    <img src="assets/Beads.gif" alt="Multiple particles" style="width:100%;">
+                    <h2>Multiple Particles</h2>
+                </div>
+                <div class="video-card">
+                    <img src="assets/ring.gif" alt="Inclusion ring" style="width:100%;">
+                    <h2>Inclusion Ring</h2>
+                </div>
+                <div class="video-card">
+                    <img src="assets/Inclusion.gif" alt="External inclusions" style="width:100%;">
+                    <h2>External Inclusions</h2>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p><a href="mailto:p.sillano@tudelft.nl">Contact</a></p>
         </div>
-        <div class="video-item">
-          <h2>Phase Separation</h2>
-          <video width="300" height="200" controls>
-            <source src="assets/phase_sep.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="video-item">
-          <h2>Tube</h2>
-          <video width="300" height="200" controls>
-            <source src="assets/tube.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="video-item">
-          <h2>Diffusion</h2>
-          <video width="300" height="200" controls>
-            <source src="assets/diffusion.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-
-        <div class="video-item">
-          <h2>Engulfment of a colloidal particle</h2>
-          <video width="300" height="200" controls>
-            <source src="assets/wrapp.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </div>
-
-
-        <div class="video-item">
-          <h2>Wrapping with Yuan potential</h2>
-          <video width="300" height="200" controls>
-            <source src="assets/movie1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-
-      <div class="video-item">
-        <h1>Mesh based simulations</h1>
-        <h2>Engulfment of a colloidal particle</h2>
-        <img src="assets/Bead.gif" alt="Engulfment of a colloidal particle" width="300" height="200">
-      </div>
-
-      <div class="video-item">
-        <h2>Multiple particles engulfment</h2>
-        <img src="assets/Beads.gif" alt="Engulfment of a colloidal particle" width="300" height="200">
-      </div>
-
-
-      <div class="video-item">
-        <h2>Inclusion ring</h2>
-        <img src="assets/ring.gif" alt="Engulfment of a colloidal particle" width="300" height="200">
-      </div>
-
-      <div class="video-item">
-        <h2>External particle inclusions</h2>
-        <img src="assets/Inclusion.gif" alt="Engulfment of a colloidal particle" width="300" height="200">
-      </div>
-
-
-      </div>
-
-
-    </body>
-    </html>
-    
-
-
-
-
-
-
-
-
+    </footer>
 </body>
-
-
- 
-<!-- second version
-<script>
-    function handleScroll() {
-      if (window.innerHeight < 600) { // Adjust height as needed
-        document.body.style.height = window.innerHeight + "px";
-      } else {
-        document.body.style.height = "auto";
-      }
-    }
-  
-    window.addEventListener("resize", handleScroll);
-    window.addEventListener("load", handleScroll);
-  </script> -->
-  
-
 </html>
